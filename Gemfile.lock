@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/zachfeldman/slack-ruby-bot.git
+  revision: 8580a235795463972d2da7a5142cb61c42a09eac
+  specs:
+    slack-ruby-bot (0.4.5)
+      activesupport
+      giphy (~> 2.0.2)
+      hashie
+      slack-ruby-client
+      websocket-driver (~> 0.5.4)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -33,12 +44,6 @@ GEM
     minitest (5.8.2)
     multipart-post (2.0.0)
     oj (2.13.0)
-    slack-ruby-bot (0.4.4)
-      activesupport
-      giphy (~> 2.0.2)
-      hashie
-      slack-ruby-client
-      websocket-driver (~> 0.5.4)
     slack-ruby-client (0.3.1)
       eventmachine
       faraday
@@ -55,7 +60,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  slack-ruby-bot
+  slack-ruby-bot!
 
 BUNDLED WITH
    1.10.6
