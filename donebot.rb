@@ -1,6 +1,7 @@
 require 'slack-ruby-bot'
 
-COUNTER = 0
+COUNTER = {}
+COUNTER[:count] = 0
 
 module DoneBot
   class App < SlackRubyBot::App
@@ -8,7 +9,7 @@ module DoneBot
 
   class Done < SlackRubyBot::Commands::Base
     def self.call(client, data, _match)
-      COUNTER.replace(COUNTER + 1)
+      COUNTER[:count] += 1
       finished_sayings = ["Great job!", "Nice work.", "Keep at it.", "Do, or do not. There is no try!"]
       client.message text: finished_sayings[(rand*4).ceil-1], channel: data.channel
     end
@@ -22,7 +23,7 @@ module DoneBot
 
   class Reset < SlackRubyBot::Commands::Base
     def self.call(client, data, _match)
-      COUNTER.replace(0)
+      COUNTER[:count] = 0
       client.message text: "Counter reset to 0.", channel: data.channel
     end
   end
